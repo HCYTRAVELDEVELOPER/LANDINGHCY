@@ -1,0 +1,63 @@
+.navbar-toggler {
+    font-size: 0.875rem; /* Tamaño de fuente más pequeño */
+    padding: 0.2rem 0.4rem; /* Menos espacio alrededor del texto */
+    border: none; /* Sin borde */
+    border-radius: 0.25rem; /* Bordes redondeados */
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Transiciones suaves */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra alrededor */
+    margin-left: 15px;
+}
+
+.navbar-toggler:hover {
+    color: #fff; /* Cambia el color del texto al pasar el mouse */
+    background-color: #00b7ff; /* Cambia el color de fondo al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada al pasar el mouse */
+}
+
+.navbar-toggler:focus {
+    outline: none; /* Quita el contorno al enfocar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra al enfocar */
+}
+
+.navbar-toggler-icon {
+    background-image: none; /* Usa solo el icono sin imagen de fondo */
+}
+#navbarCollapse{
+    text-align: center;
+}
+.navbar-collapse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-header {
+    padding: 20px;
+    font-weight: bold; /* Texto en negrita */
+    font-size: 1.2em; /* Tamaño de fuente aumentado */
+}
+.navbar-nav .nav-link {
+    position: relative;
+    transition: color 0.3s, border-bottom-color 0.3s; /* Transiciones suaves */
+}
+
+.navbar-nav .nav-link:hover::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: orange; /* Color de la línea */
+    transition: width 0.3s, left 0.3s; /* Transiciones suaves */
+}
+
+.navbar-nav .nav-link:hover {
+    color: orange; /* Cambia el color del texto a naranja al pasar el mouse */
+}
+
+.navbar-nav .nav-link:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+

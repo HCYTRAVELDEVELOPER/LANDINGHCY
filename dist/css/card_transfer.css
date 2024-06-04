@@ -1,0 +1,125 @@
+.country-box.active {
+    background-color: #dbeff8; /* Color de resaltado */
+    border-radius: 10px; /* Redondear los bordes */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+
+#cards-argentina {
+    display: block; /* Mostrar las tarjetas de Argentina por defecto */
+}
+
+#cards-brasil {
+    display: none; /* Ocultar las tarjetas de Brasil por defecto */
+}
+
+.card_transfer {
+    margin-bottom: 20px;
+    max-width: 300px; /* Ancho máximo del card */
+    margin-left: auto; /* Centrar el card en la columna */
+    margin-right: auto; /* Centrar el card en la columna */
+    box-shadow: 0 4px 8px rgba(5, 5, 5, 0.4); /* Agregar sombra */
+    border-radius: 20px; /* Redondear los bordes */
+}
+
+.card_transfer .card-img {
+    width: 100%;
+    height: 150px; /* Reducir altura de la imagen */
+    object-fit: cover;
+}
+
+.card_transfer .card-body {
+    text-align: center;
+}
+
+.card_transfer .card-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card_transfer .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+}
+
+.card_transfer .passengers {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* BOTÓN */
+.boton_transfer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+.boton_transfer {
+    display: block;
+    width: 25%; /* Ocupa el 50% del ancho */
+    padding: 10px 0;
+    background-color: #ADD8E6; /* Azul muy claro */
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
+#link_transfer {
+    text-decoration: none; /* Quitar la decoración de los enlaces */
+    color: black;
+}
+
+
+
+.boton_transfer:hover {
+    background-color: #BFEFFF; /* Azul más claro al pasar el mouse */
+}
+
+/* Agregar animaciones para mostrar y ocultar */
+.transfer-cards {
+    display: none; /* Ocultar las tarjetas por defecto */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.transfer-cards.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.transfer-cards.hide {
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+
+
+/*ANIMAR AL ACERCAR MOUSE TRANSFER*/
+
+/* Animación de acercamiento suave al pasar el mouse */
+.card_transfer {
+    margin-bottom: 20px;
+    max-width: 300px; /* Ancho máximo del card */
+    margin-left: auto; /* Centrar el card en la columna */
+    margin-right: auto; /* Centrar el card en la columna */
+    box-shadow: 0 4px 8px rgba(5, 5, 5, 0.4); /* Agregar sombra */
+    border-radius: 20px; /* Redondear los bordes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+    
+}
+
+.card_transfer:hover {
+    transform: scale(1.05); /* Aumentar el tamaño al 105% */
+    box-shadow: 0 8px 16px rgba(5, 5, 5, 0.4); /* Sombra más grande */
+}

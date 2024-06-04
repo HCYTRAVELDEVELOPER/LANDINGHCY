@@ -1,0 +1,47 @@
+/*CUADROS DE LOS PAISES*/
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    padding: 70px 0px 70px 0px;
+    /* border: 1px solid black; */
+  }
+  .country-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 8%;
+    margin-left: 8%;
+    padding: 10px  30px  10px  30px;
+    /* border: 1px solid #ccc; */
+    border-radius: 10px;
+    /* box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1); */
+    transition: background-color 0.3s ease; /* Añade una transición suave */
+  }
+  
+  .country-box:hover {
+    background-color: #d9d9d9; /* Cambia el color de fondo al pasar el mouse */
+  }
+  .country-logo {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+  }
+  .country-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .country-name {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+  }

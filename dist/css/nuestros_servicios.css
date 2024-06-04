@@ -1,0 +1,66 @@
+.container_nuestros_servicios {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    padding: 0% 10% 0% 10%;
+    margin-bottom: 0%;
+    box-sizing: border-box;
+}
+.left_section_nuestros_servicios {
+    flex: 1;
+    padding-right: 20px;
+    text-align: left;
+}
+.left_section_nuestros_servicios h1 {
+    font-size: 36px;
+    color: #333;
+}
+.left_section_nuestros_servicios p {
+    font-size: 18px;
+    color: #666;
+}
+.left_section_nuestros_servicios .button_nuestros_servicios {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #411b9a; /* Color morado */
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.left_section_nuestros_servicios .button_nuestros_servicios:hover {
+    background-color: #8e24aa; /* Color morado más claro al pasar el mouse */
+}
+.right_section_nuestros_servicios {
+    flex: 1;
+    padding-left: 20px;
+    text-align: left;
+}
+.right_section_nuestros_servicios img {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Tamaño máximo de la imagen */
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+    .container_nuestros_servicios {
+        flex-direction: column;
+        text-align: center;
+        height: auto; /* Ajustar altura para pantallas pequeñas */
+    }
+    .left_section_nuestros_servicios, 
+    .right_section_nuestros_servicios {
+        padding: 10px 0;
+    }
+    .left_section_nuestros_servicios {
+        padding-right: 0;
+    }
+    .right_section_nuestros_servicios {
+        padding-left: 0;
+    }
+}
