@@ -1,3 +1,4 @@
+
 .country-box.active {
     background-color: #dbeff8; /* Color de resaltado */
     border-radius: 10px; /* Redondear los bordes */
@@ -29,11 +30,11 @@
 }
 
 .card_transfer .card-body {
-    text-align: center;
+    text-align: left;
 }
 
 .card_transfer .card-title {
-    font-size: 18px;
+    font-size: 25px;
     font-weight: bold;
 }
 
@@ -61,7 +62,7 @@
 
 .boton_transfer {
     display: block;
-    width: 25%; /* Ocupa el 50% del ancho */
+    width: 250px; /* Ocupa el 50% del ancho */
     padding: 10px 0;
     background-color: #ADD8E6; /* Azul muy claro */
     color: #fff;
@@ -122,4 +123,18 @@
 .card_transfer:hover {
     transform: scale(1.05); /* Aumentar el tamaño al 105% */
     box-shadow: 0 8px 16px rgba(5, 5, 5, 0.4); /* Sombra más grande */
+}
+
+.botonesInfoCards button{
+    margin: 5px;
+}
+
+.botonesInfoCards .btn-transparent {
+    border: 2px solid #14B8A6; /* Info color border */
+    background-color: #CCFBF1;
+    color: #0F766E;
+    border-radius: 50px; /* Rounded border */
+}
+.botonesInfoCards .btn-transparent:disabled {
+    opacity: 0.65; /* Disabled look */
 }
