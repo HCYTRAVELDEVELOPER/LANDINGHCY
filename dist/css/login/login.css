@@ -1,0 +1,69 @@
+body{
+    background-image: url('../../img/slide1.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.wrapper{
+    
+    background-size: cover;
+    padding-top: 110px;
+}
+
+.login-box{
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 0px;
+    border: 0px solid black;
+    min-width: 28%;
+    max-width: 100%;
+    border-radius: 20px; /* Ajusta el valor para el redondeado que desees */
+    color: black;
+    font-size: 18px;
+}
+
+.login-box .card{
+    background-color: rgba(213, 196, 185, 0.6); /* Color de fondo con mucha transparencia */
+    border-radius: 20px; /* Ajusta el valor para el redondeado que desees */
+    color: black;
+}
+
+.login-box .card .card-body {
+    border: 0px solid black; /* Puedes eliminar esto si no es necesario */
+    background-color: rgba(213, 196, 185, 0.5); /* Color de fondo con mucha transparencia */
+    border-radius: 20px; /* Ajusta el valor para el redondeado que desees */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opción para agregar una sombra suave */
+    padding: 20px; /* Opcional, para agregar espacio dentro de la tarjeta */
+    text-decoration: none;
+    color: black;
+    padding: 30px;
+}
+
+.mb-1 a,
+.mb-0 a {
+    text-decoration: none; /* Quita la subrayado */
+    color: black; /* Establece el color negro */
+}
+
+.img-logo-login{
+    width: 100px;
+}
+
+.btn-primary {
+    background-color: #1F2937; /* Fondo del botón */
+    color: white; /* Color del texto */
+    font-family: 'Arial', sans-serif; /* Tipografía más seria y bonita */
+    font-size: 14px; /* Tamaño de la letra */
+    border: none; /* Quitar bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano para indicar que es un botón */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+}
+
+.btn-primary:hover {
+    background-color: #2D3748; /* Fondo del botón al pasar el mouse */
+}
+
+
+
+
+

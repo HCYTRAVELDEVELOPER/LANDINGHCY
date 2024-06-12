@@ -5,7 +5,7 @@
 <nav class="main-header navbar navbar-expand-md navbar-light navbar-white fixed-top">
       <div class="container">
         <a href="http://localhost/hcy/LANDINGHCY/index.php" class="navbar-brand">
-          <img src="http://localhost/hcy/LANDINGHCY/dist/img/logo_principal.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-4" style="opacity: .9">
+          <img src="http://localhost/hcy/LANDINGHCY/dist/img/logos/logo_principal.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-4" style="opacity: .9">
           <span class="brand-text font-weight-bold">HCY Travel</span>
         </a>
 
@@ -76,7 +76,7 @@
 
           <!-- LOGIN -->
           <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#" title="Iniciar sesión">
+            <a class="nav-link" href="http://localhost/hcy/LANDINGHCY/pages/login/login.php" title="Iniciar sesión">
               <i class="fas fa-sign-in-alt"></i>
             </a>
           </li>

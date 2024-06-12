@@ -5,7 +5,7 @@
 
 <footer>
       <div class="column logo">
-        <img id="logoFooter" src="http://localhost/hcy/LANDINGHCY/dist/img/logo_principal.png" alt="Logo">
+        <img id="logoFooter" src="http://localhost/hcy/LANDINGHCY/dist/img/logos/logo_principal.png" alt="Logo">
       </div>
       <div class="column direccion">
         <h6><strong>DIRECCIONES</strong></h6><br>
