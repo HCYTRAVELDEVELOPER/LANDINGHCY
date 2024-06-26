@@ -88,6 +88,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <div class="country-name">Brasil</div>
         </a>
+        <a href="#" class="country-box" id="colombia" style="text-decoration: none; color: inherit;">
+          <div class="country-logo">
+            <img src="dist/img/paises/colombia.png" alt="Bandera de Colombia">
+          </div>
+          <div class="country-name">Colombia</div>
+        </a>
       </div>
       <!-- FIN CARDS PAISES -->
 
@@ -114,91 +120,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
         <!-- /.content-header -->
 
-
         <div class="container">
           <div class="row no-gutters">
-            <div class="col-md-4">
-              <!-- Card Transfer 1 -->
-              <a id="link_transfer" href="pages/transfer/detalleTransfer.php">
-                <div class="card card_transfer">
-                  <img src="dist/img/carros/car1.jpg" alt="Card Image" class="card-img-top">
-                  <div class="card-body">
-                    <h5 class="card-title">Santiago de Chile</h5><br><br>
 
-                    <div class="botonesInfoCards">
-                      <button class="disabled btn btn-transparent btn-sm">
-                        <i class="fas fa-map-marker-alt"></i> Argentina
-                      </button>
-                      <button class="disabled btn btn-transparent btn-sm">
-                        <i class="fas fa-car-side"></i> Transfer
-                      </button>
-                    </div>
+            <?php
 
-                    <br>
+            //INCLUYE CONEXIÓN BD
+            include "config.php";
 
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Desde:</strong> Argentina Oeste</p>
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Hacia:</strong> Argentina Centro</p>
-                    <p class="price">$50 USD</p>
-                    <span class="passengers"><i class="fas fa-user"></i> x4</span>
-                  </div>
-                </div>
-              </a>
-              <!-- /.Card Transfer 1 -->
-            </div>
-            <div class="col-md-4">
-              <!-- Card Transfer 2 -->
-              <a id="link_transfer" href="pages/transfer/detalleTransfer.php">
-                <div class="card card_transfer">
-                  <img src="dist/img/carros/car1.jpg" alt="Card Image" class="card-img-top">
-                  <div class="card-body">
-                    <h5 class="card-title">Santiago de Chile</h5><br><br>
-                    <div class="botonesInfoCards">
-                      <button class="disabled btn btn-transparent btn-sm">
-                        <i class="fas fa-map-marker-alt"></i> Argentina
-                      </button>
-                      <button class="disabled btn btn-transparent btn-sm">
-                        <i class="fas fa-car-side"></i> Transfer
-                      </button>
-                    </div>
+            $sqlArg = "SELECT * FROM transfer WHERE PAIS = 'Argentina'";
+            $resultArg = $conn->query($sqlArg);
 
-                    <br>
+            if ($resultArg->num_rows > 0) {
+              // Generar HTML para cada transfer
+              while ($row = $resultArg->fetch_assoc()) {
+                echo '<div class="col-md-4">';
+                echo '  <a id="link_transfer" href="pages/transfer/detalleTransfer.php?idTransferGet=' . $row["ID"] . '">';
+                echo '    <div class="card card_transfer">';
+                echo '      <img src="dist/img/carros/car1.jpg" alt="Card Image" class="card-img-top">';
+                echo '      <div class="card-body">';
+                echo '        <h5 class="card-title">' . $row["CIUDAD"] . '</h5><br><br>';
+                echo '        <div class="botonesInfoCards">';
+                echo '          <button class="disabled btn btn-transparent btn-sm">';
+                echo '            <i class="fas fa-map-marker-alt"></i> ' . $row["PAIS"] . '';
+                echo '          </button>';
+                echo '          <button class="disabled btn btn-transparent btn-sm">';
+                echo '            <i class="fas fa-car-side"></i> Transfer';
+                echo '          </button>';
+                echo '        </div><br>';
+                echo '        <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Desde:</strong> ' . $row["ORIGEN"] . '</p>';
+                echo '        <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Hacia:</strong> ' . $row["DESTINO"] . '</p>';
+                echo '        <p class="price">$' . $row["PRECIO"] . ' USD</p>';
+                echo '        <span class="passengers"><i class="fas fa-user"></i> x' . $row["ASIENTOS"] . '</span>';
+                echo '      </div>';
+                echo '    </div>';
+                echo '  </a>';
+                echo '</div>';
+              }
+            } else {
+              echo '<p>No se encontraron transfers en Argentina.</p>';
+            }
 
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Desde:</strong> Argentina Oeste</p>
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Hacia:</strong> Argentina Centro</p>
-                    <p class="price">$50 USD</p>
-                    <span class="passengers"><i class="fas fa-user"></i> x6</span>
-                  </div>
-                </div>
-              </a>
-              <!-- /.Card Transfer 2 -->
-            </div>
-            <div class="col-md-4">
-              <!-- Card Transfer 2 -->
-              <a id="link_transfer" href="pages/transfer/detalleTransfer.php">
-                <div class="card card_transfer">
-                  <img src="dist/img/carros/car1.jpg" alt="Card Image" class="card-img-top">
-                  <div class="card-body">
-                    <h5 class="card-title">Santiago de Chile</h5><br><br>
-                    <div class="botonesInfoCards">
-                      <button class="disabled btn btn-transparent btn-sm">
-                        <i class="fas fa-map-marker-alt"></i> Argentina
-                      </button>
-                      <button class="disabled btn btn-transparent btn-sm">
-                        <i class="fas fa-car-side"></i> Transfer
-                      </button>
-                    </div>
+            $conn->close();
+            ?>
 
-                    <br>
-
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Desde:</strong> Argentina Oeste</p>
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Hacia:</strong> Argentina Centro</p>
-                    <p class="price">$50 USD</p>
-                    <span class="passengers"><i class="fas fa-user"></i> x6</span>
-                  </div>
-                </div>
-              </a>
-              <!-- /.Card Transfer 2 -->
-            </div>
           </div>
         </div>
       </div>
@@ -217,93 +182,113 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
         <!-- /.content-header -->
 
-
         <div class="container">
           <div class="row no-gutters">
-            <div class="col-md-4">
-              <!-- Card Transfer 1 -->
-              <a id="link_transfer" href="pages/transfer/detalleTransfer.php">
-                <div class="card card_transfer">
-                  <img src="dist/img/carros/car1.jpg" alt="Card Image" class="card-img-top">
-                  <div class="card-body">
-                    <h5 class="card-title">Rio de Janeiro</h5><br><br>
-                    <div class="botonesInfoCards">
-                      <button class="disabled btn btn-transparent btn-sm">
-                        <i class="fas fa-map-marker-alt"></i> Brasil
-                      </button>
-                      <button class="disabled btn btn-transparent btn-sm">
-                        <i class="fas fa-car-side"></i> Transfer
-                      </button>
-                    </div>
 
-                    <br>
+            <?php
 
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Desde:</strong> Brasil Oeste</p>
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Hacia:</strong> Brasil Centro</p>
-                    <p class="price">$50 USD</p>
-                    <span class="passengers"><i class="fas fa-user"></i> x4</span>
-                  </div>
-                </div>
-              </a>
-              <!-- /.Card Transfer 1 -->
-            </div>
-            <div class="col-md-4">
-              <!-- Card Transfer 2 -->
-              <a id="link_transfer" href="pages/transfer/detalleTransfer.php">
-                <div class="card card_transfer">
-                  <img src="dist/img/carros/car1.jpg" alt="Card Image" class="card-img-top">
-                  <div class="card-body">
-                    <h5 class="card-title">Rio de Janeiro</h5><br><br>
-                    <div class="botonesInfoCards">
-                      <button class="disabled btn btn-transparent btn-sm">
-                        <i class="fas fa-map-marker-alt"></i> Brasil
-                      </button>
-                      <button class="disabled btn btn-transparent btn-sm">
-                        <i class="fas fa-car-side"></i> Transfer
-                      </button>
-                    </div>
+            //INCLUYE CONEXIÓN BD
+            include "config.php";  
 
-                    <br>
+            $sqlBra = "SELECT * FROM transfer WHERE PAIS = 'Brasil'";
+            $resultBra = $conn->query($sqlBra);
 
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Desde:</strong> Brasil Oeste</p>
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Hacia:</strong> Brasil Centro</p>
-                    <p class="price">$50 USD</p>
-                    <span class="passengers"><i class="fas fa-user"></i> x6</span>
-                  </div>
-                </div>
-              </a>
-              <!-- /.Card Transfer 2 -->
-            </div>
-            <div class="col-md-4">
-              <!-- Card Transfer 2 -->
-              <a id="link_transfer" href="pages/transfer/detalleTransfer.php">
-                <div class="card card_transfer">
-                  <img src="dist/img/carros/car1.jpg" alt="Card Image" class="card-img-top">
-                  <div class="card-body">
-                    <h5 class="card-title">Rio de Janeiro</h5><br><br>
-                    <div class="botonesInfoCards">
-                      <button class="disabled btn btn-transparent btn-sm">
-                        <i class="fas fa-map-marker-alt"></i> Brasil
-                      </button>
-                      <button class="disabled btn btn-transparent btn-sm">
-                        <i class="fas fa-car-side"></i> Sedan
-                      </button>
-                    </div>
+            if ($resultBra->num_rows > 0) {
+              // Generar HTML para cada transfer
+              while ($row = $resultBra->fetch_assoc()) {
+                echo '<div class="col-md-4">';
+                echo '  <a id="link_transfer" href="pages/transfer/detalleTransfer.php?idTransferGet=' . $row["ID"] . '">';
+                echo '    <div class="card card_transfer">';
+                echo '      <img src="dist/img/carros/car1.jpg" alt="Card Image" class="card-img-top">';
+                echo '      <div class="card-body">';
+                echo '        <h5 class="card-title">' . $row["CIUDAD"] . '</h5><br><br>';
+                echo '        <div class="botonesInfoCards">';
+                echo '          <button class="disabled btn btn-transparent btn-sm">';
+                echo '            <i class="fas fa-map-marker-alt"></i> ' . $row["PAIS"] . '';
+                echo '          </button>';
+                echo '          <button class="disabled btn btn-transparent btn-sm">';
+                echo '            <i class="fas fa-car-side"></i> Transfer';
+                echo '          </button>';
+                echo '        </div><br>';
+                echo '        <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Desde:</strong> ' . $row["ORIGEN"] . '</p>';
+                echo '        <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Hacia:</strong> ' . $row["DESTINO"] . '</p>';
+                echo '        <p class="price">$' . $row["PRECIO"] . ' USD</p>';
+                echo '        <span class="passengers"><i class="fas fa-user"></i> x' . $row["ASIENTOS"] . '</span>';
+                echo '      </div>';
+                echo '    </div>';
+                echo '  </a>';
+                echo '</div>';
+              }
+            } else {
+              echo '<p>No se encontraron transfers en Brasil.</p>';
+            }
 
-                    <br>
+            $conn->close();
+            ?>
 
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Desde:</strong> Brasil Oeste</p>
-                    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Hacia:</strong> Brasil Centro</p>
-                    <p class="price">$50 USD</p>
-                    <span class="passengers"><i class="fas fa-user"></i> x6</span>
-                  </div>
-                </div>
-              </a>
-              <!-- /.Card Transfer 2 -->
-            </div>
           </div>
         </div>
       </div>
+
+
+      <div id="cards-colombia" class="transfer-cards">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Transfers en <strong>Colombia</strong></h1>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <div class="container">
+        <div class="row no-gutters">
+            <?php
+            //INCLUYE CONEXIÓN BD
+            include "config.php";
+
+            $sqlCol = "SELECT * FROM transfer WHERE PAIS = 'Colombia'";
+            $resultCol = $conn->query($sqlCol);
+
+            if ($resultCol->num_rows > 0) {
+                // Generar HTML para cada transfer
+                while ($row = $resultCol->fetch_assoc()) {
+                    echo '<div class="col-md-4">';
+                    echo '  <a id="link_transfer" href="pages/transfer/detalleTransfer.php?idTransferGet=' . $row["ID"] . '">';
+                    echo '    <div class="card card_transfer">';
+                    echo '      <img src="dist/img/carros/car1.jpg" alt="Card Image" class="card-img-top">';
+                    echo '      <div class="card-body">';
+                    echo '        <h5 class="card-title">' . $row["CIUDAD"] . '</h5><br><br>';
+                    echo '        <div class="botonesInfoCards">';
+                    echo '          <button class="disabled btn btn-transparent btn-sm">';
+                    echo '            <i class="fas fa-map-marker-alt"></i> ' . $row["PAIS"] . '';
+                    echo '          </button>';
+                    echo '          <button class="disabled btn btn-transparent btn-sm">';
+                    echo '            <i class="fas fa-car-side"></i> Transfer';
+                    echo '          </button>';
+                    echo '        </div><br>';
+                    echo '        <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Desde:</strong> ' . $row["ORIGEN"] . '</p>';
+                    echo '        <p class="card-text"><i class="fas fa-map-marker-alt"></i> <strong>Hacia:</strong> ' . $row["DESTINO"] . '</p>';
+                    echo '        <p class="price">$' . $row["PRECIO"] . ' USD</p>';
+                    echo '        <span class="passengers"><i class="fas fa-user"></i> x' . $row["ASIENTOS"] . '</span>';
+                    echo '      </div>';
+                    echo '    </div>';
+                    echo '  </a>';
+                    echo '</div>';
+                }
+            } else {
+                echo '<p>No se encontraron transfers en Colombia.</p>';
+            }
+
+            $conn->close();
+            ?>
+        </div>
+    </div>
+</div>
+
       <!-- FIN CARDS TRANSFER -->
 
       <!-- BOTON TODOS LOS TRANSFER -->

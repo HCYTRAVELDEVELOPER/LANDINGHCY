@@ -1,10 +1,8 @@
-
 .country-box.active {
     background-color: #dbeff8; /* Color de resaltado */
     border-radius: 10px; /* Redondear los bordes */
     transition: background-color 0.3s ease; /* Transición suave */
 }
-
 
 #cards-argentina {
     display: block; /* Mostrar las tarjetas de Argentina por defecto */
@@ -14,6 +12,10 @@
     display: none; /* Ocultar las tarjetas de Brasil por defecto */
 }
 
+#cards-colombia {
+    display: none; /* Ocultar las tarjetas de Colombia por defecto */
+}
+
 .card_transfer {
     margin-bottom: 20px;
     max-width: 300px; /* Ancho máximo del card */
@@ -21,6 +23,7 @@
     margin-right: auto; /* Centrar el card en la columna */
     box-shadow: 0 4px 8px rgba(5, 5, 5, 0.4); /* Agregar sombra */
     border-radius: 20px; /* Redondear los bordes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
 }
 
 .card_transfer .card-img {
@@ -73,12 +76,11 @@
     transition: background-color 0.3s ease;
     box-sizing: border-box;
 }
+
 #link_transfer {
     text-decoration: none; /* Quitar la decoración de los enlaces */
     color: black;
 }
-
-
 
 .boton_transfer:hover {
     background-color: #BFEFFF; /* Azul más claro al pasar el mouse */
@@ -104,28 +106,13 @@
     transform: translateY(20px);
 }
 
-
-
-/*ANIMAR AL ACERCAR MOUSE TRANSFER*/
-
 /* Animación de acercamiento suave al pasar el mouse */
-.card_transfer {
-    margin-bottom: 20px;
-    max-width: 300px; /* Ancho máximo del card */
-    margin-left: auto; /* Centrar el card en la columna */
-    margin-right: auto; /* Centrar el card en la columna */
-    box-shadow: 0 4px 8px rgba(5, 5, 5, 0.4); /* Agregar sombra */
-    border-radius: 20px; /* Redondear los bordes */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
-    
-}
-
 .card_transfer:hover {
     transform: scale(1.05); /* Aumentar el tamaño al 105% */
     box-shadow: 0 8px 16px rgba(5, 5, 5, 0.4); /* Sombra más grande */
 }
 
-.botonesInfoCards button{
+.botonesInfoCards button {
     margin: 5px;
 }
 
@@ -135,6 +122,7 @@
     color: #0F766E;
     border-radius: 50px; /* Rounded border */
 }
+
 .botonesInfoCards .btn-transparent:disabled {
     opacity: 0.65; /* Disabled look */
 }
