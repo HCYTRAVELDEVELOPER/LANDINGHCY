@@ -2,12 +2,21 @@
 <link rel="stylesheet" href="http://localhost/hcy/LANDINGHCY/dist/css/menu.css">
 
 
+<<<<<<< Updated upstream
 <nav class="main-header navbar navbar-expand-md navbar-light navbar-white fixed-top">
       <div class="container">
         <a href="http://localhost/hcy/LANDINGHCY/index.php" class="navbar-brand">
           <img src="http://localhost/hcy/LANDINGHCY/dist/img/logo_principal.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-4" style="opacity: .9">
           <span class="brand-text font-weight-bold">HCY Travel</span>
         </a>
+=======
+      <nav class="main-header navbar navbar-expand-md navbar-light navbar-white fixed-top">
+        <div class="container">
+          <a href="http://localhost/hcy/LANDINGHCY/index.php" class="navbar-brand">
+            <img src="http://localhost/hcy/LANDINGHCY/dist/img/logos/logo_principal.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-4" style="opacity: .9">
+            <span class="brand-text font-weight-bold">HCY Travel</span>
+          </a>
+>>>>>>> Stashed changes
 
         <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -40,6 +49,7 @@
 
 
         </div>
+<<<<<<< Updated upstream
 
         <!-- Right navbar links -->
         <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
@@ -84,3 +94,6 @@
         </ul>
       </div>
     </nav>
+=======
+      </nav>
+>>>>>>> Stashed changes
