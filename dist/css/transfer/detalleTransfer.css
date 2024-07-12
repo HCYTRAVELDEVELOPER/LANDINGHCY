@@ -1,13 +1,13 @@
 .wrapper{
-    background-image: url('../../img/slide1.jpeg');
-    background-size: cover;
+    background-image: url('../../img/detalleTransfer/travel_hcy_yes.webp');
+    background-size: repeat;
     padding-top: 100px;
 }
 
 .detalle-transfer{
     border: 0px solid black;
-    width: 70%;
-    max-height: 2000px;
+    width: 65%;
+    max-height: 1500px;
     margin: auto;
     border-radius: 15px; /* Añadir bordes redondeados */
 }

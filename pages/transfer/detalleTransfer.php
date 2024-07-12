@@ -1,3 +1,42 @@
+<?php
+// Incluye conexión a la base de datos
+include "../../config.php";
+
+// Verifica si se ha pasado el parámetro idTransferGet por GET
+if (isset($_GET['idTransferGet'])) {
+    // Sanitiza el ID para evitar inyección SQL (si es necesario)
+    $idTransferGet = $_GET['idTransferGet'];
+
+    // Consulta SQL para obtener los detalles del transfer
+    $sqlTransferDetalle = "SELECT * FROM transfer WHERE ID = $idTransferGet";
+    $resultTransferDetalle = $conn->query($sqlTransferDetalle);
+
+    if ($resultTransferDetalle->num_rows > 0) {
+        // Guarda los datos del transfer en variables PHP
+        $row = $resultTransferDetalle->fetch_assoc();
+        $pais = $row['PAIS'];
+        $origen = $row['ORIGEN'];
+        $destino = $row['DESTINO'];
+        $vehiculo = $row['VEHICULO'];
+        $asientos = $row['ASIENTOS'];
+        $precio = $row['PRECIO'];
+    } else {
+        // Si no se encuentra ningún transfer con el ID dado
+        echo "No se encontraron detalles para este transfer.";
+        exit(); // Otra acción según sea necesario
+    }
+
+    $conn->close();
+} else {
+    // Si no se proporcionó un ID válido por GET
+    echo "ID de transfer no proporcionado.";
+    exit(); // Otra acción según sea necesario
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -37,7 +76,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="detalle-transfer p-5 mb-4 bg-light rounded-5">
             <div class="container-fluid py-5">
                 <b>
-                <h2>Detalle Transfer</h2><br>
+                    <h2>Detalle Transfer</h2><br>
                 </b>
                 <div class="row">
                     <div class="col-md-8">
@@ -47,16 +86,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
                             <div class="text-detail">
                                 <strong>País</strong>
-                                <p>Texto debajo de País</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <div class="icon-detail">
-                                <i class="fas fa-plane-departure icon"></i>
-                            </div>
-                            <div class="text-detail">
-                                <strong>País</strong>
-                                <p>Texto debajo de País</p>
+                                <p><?php echo $pais; ?></p>
                             </div>
                         </div>
                         <div class="detail-item">
@@ -64,8 +94,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <i class="fas fa-map-marker-alt icon"></i>
                             </div>
                             <div class="text-detail">
-                                <strong>País</strong>
-                                <p>Texto debajo de País</p>
+                                <strong>Origen</strong>
+                                <p><?php echo $origen; ?></p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="icon-detail">
+                                <i class="fas fa-map-marker-alt icon"></i>
+                            </div>
+                            <div class="text-detail">
+                                <strong>Destino</strong>
+                                <p><?php echo $destino; ?></p>
                             </div>
                         </div>
                         <div class="detail-item">
@@ -73,18 +112,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <i class="fas fa-car icon"></i>
                             </div>
                             <div class="text-detail">
-                                <strong>País</strong>
-                                <p>Texto debajo de País</p>
+                                <strong>Vehículo</strong>
+                                <p><?php echo $vehiculo; ?></p>
                             </div>
                         </div>
                         <div class="detail-item">
-
                             <div class="icon-detail">
                                 <i class="fas fa-user-friends icon"></i>
                             </div>
                             <div class="text-detail">
-                                <strong>País</strong>
-                                <p>Texto debajo de País</p>
+                                <strong>Asientos</strong>
+                                <p><?php echo $asientos; ?> pasajeros</p>
                             </div>
                         </div>
                         <div class="detail-item">
@@ -92,20 +130,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <i class="fas fa-dollar-sign icon"></i>
                             </div>
                             <div class="text-detail">
-                                <strong>País</strong>
-                                <p>Texto debajo de País</p>
+                                <strong>Precio</strong>
+                                <p>$<?php echo $precio; ?> USD</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 text-right">
-                        <img src="http://localhost/hcy/LANDINGHCY/dist/img/detalleTransfer/detalleTransfer.png" alt="Imagen del vehículo" class="img-fluid">
+                        <img src="http://129.151.97.70/LANDINGHCY/dist/img/detalleTransfer/detalleTransfer.png" alt="Imagen del vehículo" class="img-fluid">
                     </div>
                 </div>
                 <div class="text-right mt-4">
-                    <button class="boton-reservar btn btn">Reservar Ahora</button>
+                    <a href="confirmaReserva.php?idTransferGet=<?php echo $idTransferGet; ?>">
+                        <button class="boton-reservar btn btn">Reservar Ahora</button>
+                    </a>
                 </div>
             </div>
         </div>
+
 
 
 
