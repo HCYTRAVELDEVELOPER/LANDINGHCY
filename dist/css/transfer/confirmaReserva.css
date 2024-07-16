@@ -1,0 +1,9 @@
+.content{
+    margin: 20px 50px 20px 50px; /* Puedes ajustar el valor según tus necesidades */
+    border: 0px solid black;
+}
+
+#cardDatosContacto{
+    width: 98%;
+    margin: 2%;
+}
