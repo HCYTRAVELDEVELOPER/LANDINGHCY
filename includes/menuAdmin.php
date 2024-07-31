@@ -81,7 +81,7 @@
                   <a href="#" class="dropdown-item">
                       Administrar usuario
                   </a>
-                  <a href="http://129.151.97.70/LANDINGHCY/pages/login/logout.php" class="dropdown-item">
+                  <a href="http://localhost/hcy/LANDINGHCY/pages/login/logout.php" class="dropdown-item">
                       Cerrar sesión
                   </a>
               </div>

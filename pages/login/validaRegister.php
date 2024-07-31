@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $username = strtolower($_POST['username']); // Convertir a minúsculas
     $email = $_POST['email'];
+    $numid = $_POST['numid'];
     $password = $_POST['password'];
 
     // Encriptar la contraseña
@@ -54,8 +55,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               //echo "Existe";
     } else {
         // Insertar los datos
-        $insert_sql = "INSERT INTO USERS (USERNAME, NAME, PASSWORD, EMAIL, CREATED_AT, UPDATED_AT)
-                       VALUES ('$username', '$name', '$hashed_password', '$email', NOW(), NOW())";
+        $insert_sql = "INSERT INTO USERS (USERNAME, NAME, NUMID, PASSWORD, EMAIL, CREATED_AT, UPDATED_AT)
+                       VALUES ('$username', '$name', '$numid', '$hashed_password', '$email', NOW(), NOW())";
 
         if ($conn->query($insert_sql) === TRUE) {
             echo "<script>
@@ -64,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 title: '¡Registro exitoso!',
                 text: 'Tu cuenta ha sido creada exitosamente.'
             }).then(function() {
-                window.location.href = 'http://129.151.97.70/LANDINGHCY/pages/login/login.php'; // Redirige a la página de inicio de sesión
+                window.location.href = 'http://localhost/hcy/LANDINGHCY/pages/login/login.php'; // Redirige a la página de inicio de sesión
             });
           </script>";
         } else {

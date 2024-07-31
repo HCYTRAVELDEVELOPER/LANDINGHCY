@@ -12,6 +12,27 @@ if (!isset($_SESSION['name'])) {
     //echo "Sesión existe";
 }
 
+
+
+//incluir datos bd config
+include "../../config.php";
+
+
+// Obtener el ID de la reserva desde GET
+$idReservaGet = $_GET['idReservaGet'];
+
+// Consulta para obtener los datos de la reserva
+$query = "SELECT * FROM reservas WHERE ID = $idReservaGet";
+$result = mysqli_query($conn, $query);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $reserva = mysqli_fetch_assoc($result);
+    $fechaReserva = isset($reserva['FECHARESERVA']) ? date('Y-m-d', strtotime($reserva['FECHARESERVA'])) : '';
+    $fechaCreaReserva = isset($reserva['FECHACREARESERVA']) ? date('Y-m-d', strtotime($reserva['FECHACREARESERVA'])) : '';
+    $fechaModReserva = date('Y-m-d'); // Fecha actual
+}
+
+
 ?>
 
 
@@ -21,7 +42,6 @@ if (!isset($_SESSION['name'])) {
 <html lang="es">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HCY Travel | Admin</title>
@@ -50,19 +70,9 @@ if (!isset($_SESSION['name'])) {
     <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-
-    <!-- Estilos de Toastr -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
-
-
-
-
     <div class="wrapper">
 
         <!-- Logo Preloader -->
@@ -82,153 +92,84 @@ if (!isset($_SESSION['name'])) {
 
 
 
-        <?php
-
-        //echo $emailSesion;
-
-        ?>
-
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
 
-            <br>
 
 
 
-            <?php
+            <div class="container">
 
-            //incluir datos bd config
-            include "../../config.php";
+                <form id="editForm" method="post" action="updateReserva.php">
+                    <input type="hidden" id="idReserva" name="idReserva" value="<?php echo isset($reserva['ID']) ? $reserva['ID'] : ''; ?>">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="codReserva">Código Reserva</label>
+                            <input type="text" class="form-control" id="codReserva" name="codReserva" value="<?php echo isset($reserva['CODRESERVA']) ? $reserva['CODRESERVA'] : ''; ?>" required readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="paisReserva">País Reserva</label>
+                            <input type="text" class="form-control" id="paisReserva" name="paisReserva" value="<?php echo isset($reserva['PAISRESERVA']) ? $reserva['PAISRESERVA'] : ''; ?>" required readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="origenReserva">Origen Reserva</label>
+                            <input type="text" class="form-control" id="origenReserva" name="origenReserva" value="<?php echo isset($reserva['ORIGENRESERVA']) ? $reserva['ORIGENRESERVA'] : ''; ?>" required readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="destinoReserva">Destino Reserva</label>
+                            <input type="text" class="form-control" id="destinoReserva" name="destinoReserva" value="<?php echo isset($reserva['DESTINORESERVA']) ? $reserva['DESTINORESERVA'] : ''; ?>" required readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehiculoReserva">Vehículo Reserva</label>
+                            <input type="text" class="form-control" id="vehiculoReserva" name="vehiculoReserva" value="<?php echo isset($reserva['VEHICULORESERVA']) ? $reserva['VEHICULORESERVA'] : ''; ?>" required readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="precioReserva">Precio Reserva</label>
+                            <input type="number" class="form-control" id="precioReserva" name="precioReserva" value="<?php echo isset($reserva['PRECIORESERVA']) ? $reserva['PRECIORESERVA'] : ''; ?>" required readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="nomClienteReserva">Nombre Cliente</label>
+                            <input type="text" class="form-control" id="nomClienteReserva" name="nomClienteReserva" value="<?php echo isset($reserva['NOMCLIENTERESERVA']) ? $reserva['NOMCLIENTERESERVA'] : ''; ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apeClienteReserva">Apellido Cliente</label>
+                            <input type="text" class="form-control" id="apeClienteReserva" name="apeClienteReserva" value="<?php echo isset($reserva['APECLIENTERESERVA']) ? $reserva['APECLIENTERESERVA'] : ''; ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" value="<?php echo isset($reserva['EMAIL']) ? $reserva['EMAIL'] : ''; ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipoIdClienteReserva">Tipo ID Cliente</label>
+                            <input type="text" class="form-control" id="tipoIdClienteReserva" name="tipoIdClienteReserva" value="<?php echo isset($reserva['TIPOIDCLIENTERESERVA']) ? $reserva['TIPOIDCLIENTERESERVA'] : ''; ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="idClienteReserva">ID Cliente</label>
+                            <input type="text" class="form-control" id="idClienteReserva" name="idClienteReserva" value="<?php echo isset($reserva['IDCLIENTERESERVA']) ? $reserva['IDCLIENTERESERVA'] : ''; ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaReserva">Fecha Reserva</label>
+                            <input type="date" class="form-control" id="fechaReserva" name="fechaReserva" value="<?php echo $fechaReserva; ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaCreaReserva">Fecha Creación</label>
+                            <input type="date" class="form-control" id="fechaCreaReserva" name="fechaCreaReserva" value="<?php echo $fechaCreaReserva; ?>" required readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaModReserva">Fecha Modificación</label>
+                            <input type="date" class="form-control" id="fechaModReserva" name="fechaModReserva" value="<?php echo $fechaModReserva; ?>" required readonly>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="misReservas.php" type="button" class="btn btn-secondary" data-dismiss="modal">Volver</a>
+                        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                </form>
 
-            //validar si se editó la reserva por get y mostrar toastr
-            $editGet = $_GET['editGet'];
-            if ($editGet == "1") {
-                echo '
-                <script>
-                    toastr["success"]("", "Se actualizó la reserva correctamente!");
-            
-                    toastr.options = {
-                        "closeButton": false,
-                        "debug": false,
-                        "newestOnTop": false,
-                        "progressBar": false,
-                        "positionClass": "toast-top-right",
-                        "preventDuplicates": false,
-                        "onclick": null,
-                        "showDuration": "400",
-                        "hideDuration": "1000",
-                        "timeOut": "5000",
-                        "extendedTimeOut": "1000",
-                        "showEasing": "swing",
-                        "hideEasing": "linear",
-                        "showMethod": "fadeIn",
-                        "hideMethod": "fadeOut"
-                    }
-                </script>';
-            }
-
-            //incluir modales para gestionar reservas
-            include "includes/modalEditaReserva.php";
-
-            // Obtener las reservas del usuario de acuerdo al rol de la sesión
-            //ADMINISTRADOR OBTIENE TODAS LAS RESERVAS
-            if ($rolSesion == 'ADMINISTRADOR') {
-                $consultaPorRol = "SELECT * FROM reservas";
-            }
-            if ($rolSesion == 'CLIENTE') {
-                $consultaPorRol = "SELECT * FROM reservas WHERE IDCLIENTERESERVA = '$numidSesion'";
-            }
-            $sql = $consultaPorRol;
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-                // Mostrar datos en la tabla
-                echo '<div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Administrar mis reservas</h3>
             </div>
-            <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>COD RESERVA</th>
-                            <th>PAIS</th>
-                            <th>ORIGEN</th>
-                            <th>DESTINO</th>
-                            <th>VEHICULO</th>
-                            <th>PRECIO</th>
-                            <th>NOMBRE CLIENTE</th>
-                            <th>APELLIDO CLIENTE</th>
-                            <th>EMAIL</th>
-                            <th>TIPO ID CLIENTE</th>
-                            <th>ID CLIENTE</th>
-                            <th>FECHA RESERVA</th>
-                            <th>FECHA SOLICITUD</th>
-                            <th>FECHA MODIFICACION</th>
-                            <th>ACCIÓN</th>
-                        </tr>
-                    </thead>
-                    <tbody>';
-                while ($row = $result->fetch_assoc()) {
-                    echo '<tr>
-                <td>' . $row["ID"] . '</td>
-                <td>' . $row["CODRESERVA"] . '</td>
-                <td>' . $row["PAISRESERVA"] . '</td>
-                <td>' . $row["ORIGENRESERVA"] . '</td>
-                <td>' . $row["DESTINORESERVA"] . '</td>
-                <td>' . $row["VEHICULORESERVA"] . '</td>
-                <td>' . $row["PRECIORESERVA"] . '</td>
-                <td>' . $row["NOMCLIENTERESERVA"] . '</td>
-                <td>' . $row["APECLIENTERESERVA"] . '</td>
-                <td>' . $row["EMAIL"] . '</td>
-                <td>' . $row["TIPOIDCLIENTERESERVA"] . '</td>
-                <td>' . $row["IDCLIENTERESERVA"] . '</td>
-                <td>' . $row["FECHARESERVA"] . '</td>
-                <td>' . $row["FECHACREARESERVA"] . '</td>
-                <td>' . $row["FECHAMODRESERVA"] . '</td>
-                <td>
-                <a href="formEditarReserva.php?idReservaGet=' . $row["ID"] . '" type="button" class="btn btn-warning">
-                    <i class="fas fa-edit"></i>
-                </a>
-                <!--<a href="hola.php" type="button" class="btn btn-danger">
-                    <i class="fas fa-times"></i>
-                </a>-->
-            </td>
 
-            </tr>';
-                }
-                echo '</tbody>
-                <tfoot>
-                    <tr>
-                        <th>ID</th>
-                        <th>COD RESERVA</th>
-                        <th>PAIS</th>
-                        <th>ORIGEN</th>
-                        <th>DESTINO</th>
-                        <th>VEHICULO</th>
-                        <th>PRECIO</th>
-                        <th>NOMBRE CLIENTE</th>
-                        <th>APELLIDO CLIENTE</th>
-                        <th>EMAIL</th>
-                        <th>TIPO ID CLIENTE</th>
-                        <th>ID CLIENTE</th>
-                        <th>FECHA RESERVA</th>
-                        <th>FECHA SOLICITUD</th>
-                        <th>FECHA MODIFICACION</th>
-                        <th>ACCIÓN</th>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-    </div>';
-            } else {
-                echo "<h4 style='color: red'>No se encontraron reservas para *" . $emailSesion . "*, por favor verifica</h4>";
-            }
 
-            ?>
-            <!-- /.card -->
 
 
 

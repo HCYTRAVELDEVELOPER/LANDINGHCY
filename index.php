@@ -36,13 +36,51 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <?php include 'includes\menu.php'; ?>
     <!-- /.navbar -->
 
-    <!--SLIDE PRINCIPAL-->
+
+
+    <!-- SLIDE PRINCIPAL -->
 
     <style>
-      /*MODIFICACION SLIDER*/
+      /* MODIFICACION SLIDER */
       #carouselExampleControls {
         margin-top: -20%;
       }
+
+      .search-container {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        width: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .form-group {
+        position: relative;
+      }
+
+      .form-group i {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+        color: #007bff;
+      }
+
+      .form-control {
+        padding-left: 40px;
+      }
+
+        /* Ocultar el contenedor de búsqueda cuando el ancho de la pantalla es menor de 800px */
+  @media (max-width: 1050px) {
+    .search-container {
+      display: none;
+    }
+  }
     </style>
 
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -57,10 +95,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img class="d-block w-100" src="dist/img/sliderPrincipal/hcy-travel-slider-03.webp" alt="Third slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="https://images.pexels.com/photos/2710125/pexels-photo-2710125.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Third slide">
+          <img class="d-block w-100" src="https://images.pexels.com/photos/2710125/pexels-photo-2710125.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Fourth slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="https://images.pexels.com/photos/5220005/pexels-photo-5220005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Third slide">
+          <img class="d-block w-100" src="https://images.pexels.com/photos/5220005/pexels-photo-5220005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Fifth slide">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -72,7 +110,53 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <span class="sr-only">Next</span>
       </a>
     </div>
+
+    <!-- BUSCADOR TURISTICO -->
+    <div class="search-container"><br>
+      <div class="tm-bg-white ie-container-width-fix-2">
+        <div class="container ie-h-align-center-fix">
+          <div class="row justify-content-center">
+            <div class="col-xs-12 col-md-10 col-lg-12">
+              <form action="index.html" method="get" class="tm-search-form tm-section-pad-2 text-center">
+                <div class="form-row tm-search-form-row">
+                  <div class="form-group tm-form-element tm-form-element-50 mx-auto">
+                    <i class="fa fa-globe"></i>
+                    <input name="pais" type="text" class="form-control" id="inputPais" placeholder="País">
+                  </div>
+                  <div class="form-group tm-form-element tm-form-element-50 mx-auto">
+                    <i class="fa fa-map-marker-alt"></i>
+                    <input name="origen" type="text" class="form-control" id="inputOrigen" placeholder="Origen">
+                  </div>
+                  <div class="form-group tm-form-element tm-form-element-50 mx-auto">
+                    <i class="fa fa-map-marker-alt"></i>
+                    <input name="destino" type="text" class="form-control" id="inputDestino" placeholder="Destino">
+                  </div>
+                  <div class="form-group tm-form-element tm-form-element-50 mx-auto">
+                    <i class="fa fa-car"></i>
+                    <input name="vehiculo" type="text" class="form-control" id="inputVehiculo" placeholder="Vehículo">
+                  </div>
+                  <div class="form-group tm-form-element tm-form-element-50 mx-auto">
+                    <i class="fa fa-chair"></i>
+                    <input name="asientos" type="number" class="form-control" id="inputAsientos" placeholder="Asientos">
+                  </div>
+                  <div class="form-group tm-form-element tm-form-element-50 mx-auto">
+                    <i class="fa fa-chair"></i>
+                    <input name="asientosExtra" type="number" class="form-control" id="inputAsientosExtra" placeholder="Asientos Extra">
+                  </div>
+                </div>
+                <br>
+                <div class="form-group tm-form-element tm-form-element-100 mx-auto">
+                  <button type="submit" class="btn btn-primary tm-btn-search">Buscar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- FIN SLIDE PRINCIPAL -->
+
+
 
 
 

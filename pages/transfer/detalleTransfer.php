@@ -136,7 +136,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                     </div>
                     <div class="col-md-4 text-right">
-                        <img src="http://129.151.97.70/LANDINGHCY/dist/img/detalleTransfer/detalleTransfer.png" alt="Imagen del vehículo" class="img-fluid">
+                        <img src="http://localhost/hcy/LANDINGHCY/dist/img/detalleTransfer/detalleTransfer.png" alt="Imagen del vehículo" class="img-fluid">
                     </div>
                 </div>
                 <div class="text-right mt-4">

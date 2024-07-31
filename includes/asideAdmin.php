@@ -1,9 +1,16 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="http://129.151.97.70/LANDINGHCY" class="brand-link">
-    <img src="http://129.151.97.70/LANDINGHCY/dist/img/logos/logo_principal.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+  <a href="http://localhost/hcy/LANDINGHCY" class="brand-link">
+    <img src="http://localhost/hcy/LANDINGHCY/dist/img/logos/logo_principal.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
     <span class="brand-text font-weight-light">HCY Travel</span>
   </a>
+
+
+  <?php
+    //INCLUIR DATOS DE SESION
+    include_once "datosUsuarioSesion.php";
+    //echo "<p style='color: white'>" . $rolSesion . "</p>";
+    ?>
 
   <!-- Sidebar -->
   <div class="sidebar">
@@ -14,6 +21,7 @@
       </div>
       <div class="info">
         <a href="#" class="d-block"><?php echo htmlspecialchars($_SESSION['name']); ?></a>
+        <span href="#" class="d-block" style='color: white; font-size: 11px;'><?php echo $rolSesion; ?></span>
       </div>
     </div>
 
@@ -28,15 +36,6 @@
         </div>
       </div>
     </div>
-
-
-
-
-    <?php
-    //INCLUIR DATOS DE SESION
-    include_once "datosUsuarioSesion.php";
-    //echo "<p style='color: white'>" . $rolSesion . "</p>";
-    ?>
 
 
 
@@ -63,27 +62,33 @@
             if ($rolSesion == "ADMINISTRADOR") {
             ?>
               <li class="nav-item">
-                <a href="../admin/misReservas.php" class="nav-link active">
+                <a href="../admin/misReservas.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mis Reservas</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="../admin/transfer.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Agregar Transfer</p>
+                  <p>Transfer</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="../admin/paises.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Agregar País</p>
+                  <p>Paises</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="../admin/conductores.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Agregar Conductor</p>
+                  <p>Conductores</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../admin/rolesUsuarios.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Roles usuarios</p>
                 </a>
               </li>
             <?php
@@ -103,7 +108,7 @@
 
             ?>
               <li class="nav-item">
-                <a href="../admin/misReservas.php" class="nav-link active">
+                <a href="../admin/misReservas.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mis Reservas</p>
                 </a>

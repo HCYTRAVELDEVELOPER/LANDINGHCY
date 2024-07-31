@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Generar código de reserva único
     $current_time = time();
-    $random_number = rand(100, 999999);
+    $random_number = rand(100, 999);
     $codReserva = 'HCYR' . ($current_time + $random_number);
 
     // Fecha actual
@@ -113,7 +113,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        ";
 
             $mail->send();
-            echo 'Correo de confirmación enviado.';
+            //echo 'Correo de confirmación enviado.';
+            header("Location: confirmaInsertReserva.php");
         } catch (Exception $e) {
             echo "Error al enviar el correo de confirmación: {$mail->ErrorInfo}";
         }

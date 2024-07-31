@@ -146,7 +146,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <div class="form-group">
                                                     <label>Nombre:</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" placeholder="Nombre" name="nomCliente" required/>
+                                                        <input type="text" class="form-control" placeholder="Nombre" name="nomCliente" required />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                                                         </div>
@@ -156,7 +156,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <div class="form-group">
                                                     <label>Apellido:</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" placeholder="Apellido" name="apeCliente" required/>
+                                                        <input type="text" class="form-control" placeholder="Apellido" name="apeCliente" required />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                                                         </div>
@@ -167,17 +167,59 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <label for="tipoIdCliente">Tipo ID</label>
                                                     <select class="form-control" id="tipoIdCliente" name="tipoIdCliente" required>
                                                         <option value="">Seleccione...</option>
+
+                                                        <!-- Colombia -->
                                                         <option value="CC">Cédula de Ciudadanía</option>
                                                         <option value="TI">Tarjeta de Identidad</option>
                                                         <option value="CE">Cédula de Extranjería</option>
                                                         <option value="PA">Pasaporte</option>
+
+                                                        <!-- Chile -->
+                                                        <option value="RUT">Rol Único Tributario (RUT)</option>
+                                                        <option value="PAS">Pasaporte</option>
+
+                                                        <!-- Argentina -->
+                                                        <option value="DNI">Documento Nacional de Identidad (DNI)</option>
+                                                        <option value="PAS">Pasaporte</option>
+
+                                                        <!-- Brasil -->
+                                                        <option value="RG">Registro Geral (RG)</option>
+                                                        <option value="CPF">Cadastro de Pessoas Físicas (CPF)</option>
+                                                        <option value="PAS">Pasaporte</option>
+
+                                                        <!-- Venezuela -->
+                                                        <option value="CI">Cédula de Identidad</option>
+                                                        <option value="PAS">Pasaporte</option>
+
+                                                        <!-- Uruguay -->
+                                                        <option value="CI">Cédula de Identidad</option>
+                                                        <option value="PAS">Pasaporte</option>
+
+                                                        <!-- México -->
+                                                        <option value="INE">Instituto Nacional Electoral (INE)</option>
+                                                        <option value="CURP">Clave Única de Registro de Población (CURP)</option>
+                                                        <option value="PAS">Pasaporte</option>
+
+                                                        <!-- Estados Unidos -->
+                                                        <option value="SSN">Social Security Number (SSN)</option>
+                                                        <option value="DLS">Driver's License</option>
+                                                        <option value="PAS">Pasaporte</option>
+
+                                                        <!-- Panamá -->
+                                                        <option value="CED">Cédula de Identidad</option>
+                                                        <option value="PAS">Pasaporte</option>
+
+                                                        <!-- Bolivia -->
+                                                        <option value="CI">Cédula de Identidad</option>
+                                                        <option value="PAS">Pasaporte</option>
+
                                                     </select>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label>Número ID:</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" placeholder="ID" name="idCliente" required/>
+                                                        <input type="text" class="form-control" placeholder="ID" name="idCliente" required />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text"><i class="fas fa-num"></i></span>
                                                         </div>
@@ -188,7 +230,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <div class="form-group">
                                                     <label>Email:</label>
                                                     <div class="input-group">
-                                                        <input type="email" class="form-control" placeholder="Email" name="email" required/>
+                                                        <input type="email" class="form-control" placeholder="Email" name="email" required />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                                         </div>
@@ -199,7 +241,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <div class="form-group">
                                                     <label>Teléfono:</label>
                                                     <div class="input-group">
-                                                        <input type="tel" class="form-control" placeholder="Teléfono" required/>
+                                                        <input type="tel" class="form-control" placeholder="Teléfono" required />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                                         </div>
@@ -210,7 +252,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <div class="form-group">
                                                     <label>Fecha de viaje:</label>
                                                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                                        <input type="date" class="form-control datetimepicker-input" data-target="#reservationdate" name="fechaReserva" required/>
+                                                        <input type="date" class="form-control datetimepicker-input" data-target="#reservationdate" name="fechaReserva" required />
                                                         <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                                                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                                         </div>

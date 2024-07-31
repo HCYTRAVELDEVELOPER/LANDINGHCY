@@ -36,7 +36,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <div class="login-box">
             <div class="login-logo">
-                <a href="http://129.151.97.70/LANDINGHCY/index.php"><img class="img-logo-login" src="http://129.151.97.70/LANDINGHCY/dist/img/logos/logo_principal.png" alt=""></a>
+                <a href="http://localhost/hcy/LANDINGHCY/index.php"><img class="img-logo-login" src="http://localhost/hcy/LANDINGHCY/dist/img/logos/logo_principal.png" alt=""></a>
             </div>
             <!-- /.login-logo -->
             <div class="card">
@@ -71,6 +71,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-envelope"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <label for="numid">Número de ID</label>
+                        <div class="input-group mb-3">
+                            <input type="text" name="numid" class="form-control" placeholder="Número ID" required>
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-hashtag"></span>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +149,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../../dist/js/pages/dashboard3.js"></script>
 
-    <script src="http://129.151.97.70/LANDINGHCY/dist/js/login/validaRegistroNuevoUsuario.js"></script>
+    <script src="http://localhost/hcy/LANDINGHCY/dist/js/login/validaRegistroNuevoUsuario.js"></script>
 
 </body>
 

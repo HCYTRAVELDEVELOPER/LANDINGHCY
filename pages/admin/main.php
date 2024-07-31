@@ -5,7 +5,7 @@ session_start();
 // VERIFICAR SI LA SESIÓN EXISTE
 if (!isset($_SESSION['name'])) {
   echo "<script>
-          window.location.href = 'http://129.151.97.70/LANDINGHCY/pages/login/login.php';
+          window.location.href = 'http://localhost/hcy/LANDINGHCY/pages/login/login.php';
         </script>";
   exit(); // Detener la ejecución del script PHP
 }else{

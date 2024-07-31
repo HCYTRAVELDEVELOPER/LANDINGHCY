@@ -6,13 +6,13 @@
 
       
 
-      <link rel="stylesheet" href="http://129.151.97.70/LANDINGHCY/dist/css/menu.css">
+      <link rel="stylesheet" href="http://localhost/hcy/LANDINGHCY/dist/css/menu.css">
 
 
       <nav class="main-header navbar navbar-expand-md navbar-light navbar-white fixed-top">
         <div class="container">
-          <a href="http://129.151.97.70/LANDINGHCY/index.php" class="navbar-brand">
-            <img src="http://129.151.97.70/LANDINGHCY/dist/img/logos/logo_principal.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-4" style="opacity: .9">
+          <a href="http://localhost/hcy/LANDINGHCY/index.php" class="navbar-brand">
+            <img src="http://localhost/hcy/LANDINGHCY/dist/img/logos/logo_principal.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-4" style="opacity: .9">
             <span class="brand-text font-weight-bold">HCY Travel</span>
           </a>
 
@@ -28,13 +28,18 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="http://129.151.97.70/LANDINGHCY/index.php" class="nav-link">Inicio</a>
+                <a href="http://localhost/hcy/LANDINGHCY/index.php" class="nav-link">Inicio</a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">Transfers</a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">La empresa</a>
+              </li>
+              <li class="nav-item">
+                <a href="http://localhost/hcy/LANDINGHCY/pages/empresas/registroEmpresas.php" target="_blank" class="nav-link">
+                  Registro Empresas &nbsp;<i class="fas fa-arrow-alt-circle-right" style="transform: rotate(-40deg); font-size: 0.8em;"></i>
+                </a>
               </li>
               <li class="nav-item">
                 <a href="https://www.tripadvisor.com.ar/Attraction_Review-g312806-d19501798-Reviews-HCY_Travel-Puerto_Iguazu_Province_of_Misiones_Litoral.html" target="_blank" class="nav-link">
@@ -114,10 +119,10 @@
 
             <!-- LOGIN -->
             <li class="nav-item dropdown">
-              <a class="login-item nav-link" href="http://129.151.97.70/LANDINGHCY/pages/login/login.php" title="Iniciar sesión" type="hidden">
+              <a class="login-item nav-link" href="http://localhost/hcy/LANDINGHCY/pages/login/login.php" title="Iniciar sesión" type="hidden">
                 <i class="fas fa-sign-in-alt"></i>
               </a>
-              <a class="user-item nav-link" href="http://129.151.97.70/LANDINGHCY/pages/login/login.php" title="Iniciar sesión" type="hidden">
+              <a class="user-item nav-link" href="http://localhost/hcy/LANDINGHCY/pages/login/login.php" title="Iniciar sesión" type="hidden">
                 <i class="far fa-user"></i>
               </a>
             </li>
