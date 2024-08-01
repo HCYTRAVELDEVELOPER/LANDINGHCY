@@ -1,26 +1,63 @@
-      
-      <?php
-      //INICIAR VARIABLES DE SESIÓN
-      session_start();
-      ?>
+<?php
+// INICIAR VARIABLES DE SESIÓN
+session_start();
+?>
 
-      
+<link rel="stylesheet" href="http://localhost/hcy/LANDINGHCY/dist/css/menu.css">
 
+<<<<<<< Updated upstream
       <link rel="stylesheet" href="http://129.151.97.70/LANDINGHCY/dist/css/menu.css">
+=======
+<nav class="main-header navbar navbar-expand-md navbar-light navbar-white fixed-top">
+  <div class="container">
+    <a href="http://localhost/hcy/LANDINGHCY/index.php" class="navbar-brand">
+      <img src="http://localhost/hcy/LANDINGHCY/dist/img/logos/logo_principal.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-4" style="opacity: .9">
+      <span class="brand-text font-weight-bold">HCY Travel</span>
+    </a>
+>>>>>>> Stashed changes
 
+    <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      Menú <!-- Agrega un texto opcional para mejorar la accesibilidad -->
+    </button>
 
+<<<<<<< Updated upstream
       <nav class="main-header navbar navbar-expand-md navbar-light navbar-white fixed-top">
         <div class="container">
           <a href="http://129.151.97.70/LANDINGHCY/index.php" class="navbar-brand">
             <img src="http://129.151.97.70/LANDINGHCY/dist/img/logos/logo_principal.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-4" style="opacity: .9">
             <span class="brand-text font-weight-bold">HCY Travel</span>
+=======
+    <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="http://localhost/hcy/LANDINGHCY/index.php" class="nav-link">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Transfers</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">La empresa</a>
+        </li>
+        <li class="nav-item">
+          <a href="http://localhost/hcy/LANDINGHCY/pages/empresas/registroEmpresas.php" target="_blank" class="nav-link">
+            Registro Empresas &nbsp;<i class="fas fa-arrow-alt-circle-right" style="transform: rotate(-40deg); font-size: 0.8em;"></i>
+>>>>>>> Stashed changes
           </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://www.tripadvisor.com.ar/Attraction_Review-g312806-d19501798-Reviews-HCY_Travel-Puerto_Iguazu_Province_of_Misiones_Litoral.html" target="_blank" class="nav-link">
+            TripAdvisor &nbsp;<i class="fas fa-arrow-alt-circle-right" style="transform: rotate(-40deg); font-size: 0.8em;"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-          <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            Menú <!-- Agrega un texto opcional para mejorar la accesibilidad -->
-          </button>
+    <!-- Right navbar links -->
+    <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
 
+<<<<<<< Updated upstream
 
           <div class="collapse navbar-collapse order-3" id="navbarCollapse">
 
@@ -124,5 +161,143 @@
             <!-- FIN LOGIN -->
 
           </ul>
+=======
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+>>>>>>> Stashed changes
         </div>
-      </nav>
+      </li>
+
+      <!-- VALIDAR SI EXISTE SESIÓN Y MOSTRAR ÍCONO DE USUARIO -->
+      <?php
+      if (isset($_SESSION['name'])) {
+        echo "<style>
+          .login-item {
+            display: none;
+          }
+          .user-item{
+            display: block;
+          }
+        </style>";
+      } else {
+        echo "<style>
+          .login-item {
+            display: block;
+          }
+          .user-item{
+            display: none;
+          }
+        </style>";
+      }
+      ?>
+      <!-- FIN VALIDAR SI EXISTE SESIÓN Y MOSTRAR ÍCONO DE USUARIO -->
+
+      <!-- LOGIN -->
+      <li class="nav-item dropdown">
+        <a class="login-item nav-link" href="http://localhost/hcy/LANDINGHCY/pages/login/login.php" title="Iniciar sesión" type="hidden">
+          <i class="fas fa-sign-in-alt"></i>
+        </a>
+        <a class="user-item nav-link" href="http://localhost/hcy/LANDINGHCY/pages/login/login.php" title="Iniciar sesión" type="hidden">
+          <i class="far fa-user"></i>
+        </a>
+      </li>
+      <!-- FIN LOGIN -->
+
+
+
+    </ul>
+
+
+
+
+  </div>
+
+
+  <div id="google_translate_element" class="custom-translate"></div>
+
+</nav>
+
+<!-- Agregar el script de Google Translate al final del archivo -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es', // Idioma predeterminado de tu sitio
+      includedLanguages: 'de,en,es,fr,it,ja,ko,pt,ru,zh-CN,zh-TW', // Idiomas que deseas soportar
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+<style>
+  .custom-translate {
+    position: fixed;
+    /* Mantiene el elemento fijo en una posición específica */
+    bottom: 15px;
+    /* Ajusta la distancia desde el borde inferior de la ventana */
+    right: 15px;
+    /* Ajusta la distancia desde el borde derecho de la ventana */
+    z-index: 9999;
+    /* Asegura que el widget esté sobre otros elementos */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    padding: 10px;
+    /* Espaciado interno */
+    width: auto;
+    /* Ancho automático para que no afecte otros elementos */
+    height: auto;
+    /* Altura automática para que no afecte otros elementos */
+  }
+
+  .custom-translate .goog-te-combo {
+    background-color: #007bff;
+    /* Color de fondo del botón */
+    border: none;
+    /* Sin borde */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    color: #ffffff;
+    /* Color del texto */
+    padding: 5px 10px;
+    /* Espaciado interno */
+    font-size: 14px;
+    /* Tamaño de fuente */
+    transition: background-color 0.3s, color 0.3s;
+    /* Transición suave para el color */
+  }
+
+  .custom-translate .goog-te-combo:hover {
+    background-color: #0056b3;
+    /* Color de fondo al pasar el cursor */
+    color: #ffffff;
+    /* Color del texto al pasar el cursor */
+  }
+</style>

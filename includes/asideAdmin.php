@@ -1,7 +1,12 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
+<<<<<<< Updated upstream
   <a href="http://129.151.97.70/LANDINGHCY" class="brand-link">
     <img src="http://129.151.97.70/LANDINGHCY/dist/img/logos/logo_principal.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+=======
+  <a href="http://localhost/hcy/LANDINGHCY" class="brand-link">
+    <img src="http://localhost/hcy/LANDINGHCY/dist/img/logos/logo_principal.png" alt="HCY Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+>>>>>>> Stashed changes
     <span class="brand-text font-weight-light">HCY Travel</span>
   </a>
 
@@ -84,6 +89,12 @@
                 <a href="./index3.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Agregar Conductor</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../admin/solicitudEmpresas.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Solicitud Empresas</p>
                 </a>
               </li>
             <?php

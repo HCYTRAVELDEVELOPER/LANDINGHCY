@@ -92,5 +92,76 @@
               </a>
           </li>
       </ul>
+      <div id="google_translate_element" class="custom-translate"></div>
   </nav>
   <!-- /.navbar -->
+
+
+
+
+
+
+  <!-- Agregar el script de Google Translate al final del archivo -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es', // Idioma predeterminado de tu sitio
+      includedLanguages: 'de,en,es,fr,it,ja,ko,pt,ru,zh-CN,zh-TW', // Idiomas que deseas soportar
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+<style>
+  .custom-translate {
+    position: fixed;
+    /* Mantiene el elemento fijo en una posición específica */
+    bottom: 15px;
+    /* Ajusta la distancia desde el borde inferior de la ventana */
+    right: 15px;
+    /* Ajusta la distancia desde el borde derecho de la ventana */
+    z-index: 9999;
+    /* Asegura que el widget esté sobre otros elementos */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    padding: 10px;
+    /* Espaciado interno */
+    width: auto;
+    /* Ancho automático para que no afecte otros elementos */
+    height: auto;
+    /* Altura automática para que no afecte otros elementos */
+  }
+
+  .custom-translate .goog-te-combo {
+    background-color: #007bff;
+    /* Color de fondo del botón */
+    border: none;
+    /* Sin borde */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    color: #ffffff;
+    /* Color del texto */
+    padding: 5px 10px;
+    /* Espaciado interno */
+    font-size: 14px;
+    /* Tamaño de fuente */
+    transition: background-color 0.3s, color 0.3s;
+    /* Transición suave para el color */
+  }
+
+  .custom-translate .goog-te-combo:hover {
+    background-color: #0056b3;
+    /* Color de fondo al pasar el cursor */
+    color: #ffffff;
+    /* Color del texto al pasar el cursor */
+  }
+</style>
+
+
+

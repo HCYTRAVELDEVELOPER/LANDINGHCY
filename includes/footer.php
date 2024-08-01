@@ -22,7 +22,7 @@
         <p><a href="">Términos y Condiciones</a></p>
       </div>
       <div class="copy">
-        &copy; 2024 HCY GROUP Company. Todos los derechos reservados.
+        &copy; <span id="currentYear"></span> HCY GROUP Company. Todos los derechos reservados.
       </div>
       <div class="redes">
         <a href="#"><i class="fab fa-facebook text-dark"></i></a>
@@ -32,3 +32,11 @@
 
       </div>
     </footer>
+
+
+
+
+    <script>
+    // Obtener el año actual y mostrarlo en el span con id "currentYear"
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
