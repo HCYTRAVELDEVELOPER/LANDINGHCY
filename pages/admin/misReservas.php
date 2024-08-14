@@ -5,7 +5,7 @@ session_start();
 // VERIFICAR SI LA SESIÓN EXISTE
 if (!isset($_SESSION['name'])) {
     echo "<script>
-          window.location.href = 'http://129.151.97.70/LANDINGHCY/pages/login/login.php';
+          window.location.href = '../../pages/login/login.php';
         </script>";
     exit(); // Detener la ejecución del script PHP
 } else {
@@ -62,11 +62,11 @@ if (!isset($_SESSION['name'])) {
 
 
         <!-- Navbar -->
-        <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/hcy/LANDINGHCY/includes/menuAdmin.php'; ?>
+        <?php include_once '../../includes/menuAdmin.php'; ?>
         <!-- /.navbar -->
 
         <!-- Aside menu Main Sidebar Container -->
-        <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/hcy/LANDINGHCY/includes/asideAdmin.php'; ?>
+        <?php include_once '../../includes/asideAdmin.php'; ?>
         <!-- Fin Aside menu Main Sidebar Container -->
 
 

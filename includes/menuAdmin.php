@@ -6,7 +6,7 @@
               <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-              <a href="../admin/main.php" class="nav-link">Home</a>
+              <a href="../pages/admin/main.php" class="nav-link">Home</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
               <a href="#" class="nav-link">Contact</a>
@@ -81,7 +81,7 @@
                   <a href="#" class="dropdown-item">
                       Administrar usuario
                   </a>
-                  <a href="http://129.151.97.70/LANDINGHCY/pages/login/logout.php" class="dropdown-item">
+                  <a href="../pages/login/logout.php" class="dropdown-item">
                       Cerrar sesión
                   </a>
               </div>

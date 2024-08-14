@@ -1,11 +1,11 @@
 
 
-<link rel="stylesheet" href="http://129.151.97.70/LANDINGHCY/dist/css/footer.css">
+<link rel="stylesheet" href="../dist/css/footer.css">
 
 
 <footer>
       <div class="column logo">
-        <img id="logoFooter" src="http://129.151.97.70/LANDINGHCY/dist/img/logos/logo_principal.png" alt="Logo">
+        <img id="logoFooter" src="../dist/img/logos/logo_principal.png" alt="Logo">
       </div>
       <div class="column direccion">
         <h6><strong>DIRECCIONES</strong></h6><br>

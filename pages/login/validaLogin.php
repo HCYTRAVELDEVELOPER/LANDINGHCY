@@ -27,7 +27,7 @@
 
 <?php
 // INCLUIR CONFIG
-include_once $_SERVER['DOCUMENT_ROOT'] . '/hcy/LANDINGHCY/config.php';
+include_once '../../config.php';
 //session_start(); // Iniciar la sesión
 error_reporting(0);
 
@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     title: '¡Inicio de sesión exitoso!',
                     text: 'Bienvenido.'
                 }).then(function() {
-                    window.location.href = 'http://129.151.97.70/LANDINGHCY/pages/admin/main.php'; // Redirige a la página de inicio
+                    window.location.href = '../../pages/admin/main.php'; // Redirige a la página de inicio
                 });
               </script>";
         } else {

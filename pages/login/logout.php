@@ -6,7 +6,7 @@ session_start();
 session_destroy();
 
 echo "<script>
-        window.location.href = 'http://129.151.97.70/LANDINGHCY/';
+        window.location.href = '../index.php';
       </script>";
 exit();
 ?>
