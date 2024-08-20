@@ -36,7 +36,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <div class="login-box">
             <div class="login-logo">
-                <a href="http://129.151.97.70/LANDINGHCY/index.php"><img class="img-logo-login" src="http://129.151.97.70/LANDINGHCY/dist/img/logos/logo_principal.png" alt=""></a>
+                <a href="../../index.php"><img class="img-logo-login" src="../../dist/img/logos/logo_principal.png" alt=""></a>
             </div>
             <!-- /.login-logo -->
             <div class="card">
@@ -140,7 +140,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../../dist/js/pages/dashboard3.js"></script>
 
-    <script src="http://129.151.97.70/LANDINGHCY/dist/js/login/validaRegistroNuevoUsuario.js"></script>
+    <script src="../../dist/js/login/validaRegistroNuevoUsuario.js"></script>
 
 </body>
 

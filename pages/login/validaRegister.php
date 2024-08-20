@@ -23,7 +23,7 @@
 <body>
 <?php
 //INCLUIR CONFIG
-include_once $_SERVER['DOCUMENT_ROOT'] . '/hcy/LANDINGHCY/config.php';
+include_once '../../config.php';
 
 // VALIDAR POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 title: '¡Registro exitoso!',
                 text: 'Tu cuenta ha sido creada exitosamente.'
             }).then(function() {
-                window.location.href = 'http://129.151.97.70/LANDINGHCY/pages/login/login.php'; // Redirige a la página de inicio de sesión
+                window.location.href = '../../pages/login/login.php'; // Redirige a la página de inicio de sesión
             });
           </script>";
         } else {

@@ -5,7 +5,7 @@ session_start();
 // VERIFICAR SI LA SESIÓN EXISTE
 if (isset($_SESSION['name'])) {
   echo "<script>
-          window.location.href = 'http://129.151.97.70/LANDINGHCY/pages/admin/main.php';
+          window.location.href = '../../pages/admin/main.php';
         </script>";
   exit(); // Detener la ejecución del script PHP
 }else{
@@ -53,7 +53,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <div class="login-box">
             <div class="login-logo">
-                <a href="http://129.151.97.70/LANDINGHCY/index.php"><img class="img-logo-login" src="http://129.151.97.70/LANDINGHCY/dist/img/logos/logo_principal.png" alt=""></a>
+                <a href="../../index.php"><img class="img-logo-login" src="../../dist/img/logos/logo_principal.png" alt=""></a>
             </div>
             <!-- /.login-logo -->
             <div class="card">
